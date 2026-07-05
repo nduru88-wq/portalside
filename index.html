@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Demens Hjælpemidler</title>
 
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#2f6fed">
+  <link rel="apple-touch-icon" href="icon-192.png">
 
   <style>
     * {
@@ -17,18 +19,18 @@
       margin: 0;
       min-height: 100vh;
       font-family: Arial, sans-serif;
-      background: #f3f5f8;
+      background: #f3f7fb;
+      padding: 22px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 24px;
     }
 
     h1 {
-      margin: 10px 0 30px;
+      margin: 8px 0 24px;
       font-size: 34px;
       text-align: center;
-      color: #222;
+      color: #1f2d3d;
     }
 
     .grid {
@@ -36,28 +38,34 @@
       max-width: 900px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 24px;
+      gap: 22px;
     }
 
     .tile {
-      min-height: 210px;
-      border-radius: 28px;
+      min-height: 220px;
+      border-radius: 30px;
       color: white;
       text-decoration: none;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       font-size: 38px;
       font-weight: bold;
       box-shadow: 0 8px 18px rgba(0,0,0,0.18);
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
       text-align: center;
-      padding: 20px;
+      padding: 22px;
+      user-select: none;
     }
 
     .tile:active {
       transform: scale(0.97);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .emoji {
+      font-size: 70px;
+      margin-bottom: 14px;
+      line-height: 1;
     }
 
     .radio {
@@ -76,36 +84,41 @@
       background: #9b51e0;
     }
 
-    .disabled {
-      opacity: 0.65;
-      cursor: not-allowed;
-    }
-
     .small {
       display: block;
       font-size: 18px;
       font-weight: normal;
-      margin-top: 10px;
+      margin-top: 8px;
+    }
+
+    .disabled {
+      opacity: 0.72;
     }
 
     @media (max-width: 650px) {
       body {
-        padding: 18px;
+        padding: 16px;
       }
 
       h1 {
         font-size: 28px;
+        margin-bottom: 18px;
       }
 
       .grid {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 16px;
       }
 
       .tile {
-        min-height: 150px;
+        min-height: 145px;
         font-size: 34px;
         border-radius: 24px;
+      }
+
+      .emoji {
+        font-size: 52px;
+        margin-bottom: 8px;
       }
     }
   </style>
@@ -118,19 +131,24 @@
   <div class="grid">
 
     <a class="tile radio" href="https://nduru88-wq.github.io/Morsradio/">
+      <div class="emoji">📻</div>
       Radio
     </a>
 
     <a class="tile telefon" href="https://nduru88-wq.github.io/Showcasetlf-opret/">
+      <div class="emoji">☎️</div>
       Telefon
     </a>
 
     <a class="tile netvaerk" href="https://nduru88-wq.github.io/p-r-rende--videohilsen2/">
+      <div class="emoji">👨‍👩‍👧</div>
       Netværk
     </a>
 
     <a class="tile beskeder disabled" href="#" onclick="alert('Beskeder tilføjes senere'); return false;">
+      <div class="emoji">💬</div>
       Beskeder
+      <span class="small">Kommer senere</span>
     </a>
 
   </div>
